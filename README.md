@@ -1,4 +1,4 @@
-# SQL Queries, statements and clauses
+# MySql Queries, statements and clauses
 Am using SQL Tools VScode Extension.
 
 I also have SQL installed and running locally on my machine.
