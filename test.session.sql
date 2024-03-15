@@ -45,3 +45,62 @@ ORDER BY name ASC;
 -- @block
 SELECT * FROM customers
 WHERE country = 'US';
+
+-- LIKE
+-- return rows where name start with B
+-- @block
+SELECT * FROM customers
+WHERE name LIKE 'B%'
+
+-- Using AND in WHERE clause to filter records with more than 1 condition
+-- @block
+SELECT * FROM customers
+WHERE name LIKE 'B%' AND country = 'US'
+
+-- Using OR to filter records where one condition must be true
+-- @block
+SELECT * FROM customers
+WHERE country = 'US' OR country = 'TZ'
+
+-- Combining both OR and AND
+-- return rows where country is 'US' AND name starts with B or L
+-- @block
+SELECT * FROM customers
+WHERE country = 'US' AND (name LIKE 'B%' OR name LIKE 'L%')
+
+-- NOT used in combination with other other operators
+-- does the opposite also known as negative operator
+-- will return rows where country is not US
+-- @block
+SELECT * FROM customers
+WHERE NOT country = 'US'
+
+-- NOT LIKE
+-- return rows where name does not start with 'B%'
+-- @block
+SELECT * FROM customers
+WHERE name NOT LIKE 'B%'
+
+-- NOT BETWEEN
+-- return rows where id is not between 3 and 5
+-- @block
+SELECT * FROM customers
+WHERE id NOT BETWEEN 3 AND 5
+
+-- NOT IN
+-- return customers not in US and KE
+-- @block
+SELECT * FROM customers
+WHERE country NOT IN ('US', 'KE')
+
+-- NOT GREATER THAN
+-- return customers where id is not greater than 3
+-- @block
+SELECT * FROM customers
+WHERE NOT id > 3
+
+-- NOT LESS THAN
+-- return customers where id is not less than 3
+-- @block
+SELECT * FROM customers
+WHERE NOT id < 3
